@@ -1,6 +1,6 @@
 // tarefas.js - Sistema de Lista de Tarefas
 let tarefas = [];
-let titulo = "LISTA DE TAREFAS V2";
+let titulo = "SISTEMA DE TAREFAS";
 function adicionarTarefa(descricao) {
   tarefas.push({ descricao: descricao, concluida: false });
   console.log("Tarefa adicionada: " + descricao);
@@ -44,3 +44,11 @@ function concluirTarefa(indice) {
 adicionarTarefa("Tarefa C");
 concluirTarefa(1);
 listarTarefas();
+function resumo() {
+  let total = tarefas.length;
+  let feitas = tarefas.filter((t) => t.concluida).length;
+  console.log("=== " + titulo + " ===");
+  console.log("Total: " + total + " | Feitas: " + feitas);
+}
+// Teste final
+resumo();
